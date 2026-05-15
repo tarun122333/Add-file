@@ -18,59 +18,89 @@ st.markdown("""
 <style>
 
 html, body, [class*="css"] {
+    background-color: #050505;
+    color: white;
     font-family: Arial;
-    background-color: #f6f4ef;
 }
 
+#MainMenu {visibility:hidden;}
+footer {visibility:hidden;}
+header {visibility:hidden;}
+
 .hero {
-    background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.65)),
-                url('https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1800&auto=format&fit=crop');
-    background-size: cover;
-    background-position: center;
-    padding: 140px 60px;
-    border-radius: 30px;
-    text-align: center;
-    color: white;
+    height: 95vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.55),
+    rgba(0,0,0,0.75)),
+    url('https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2000&auto=format&fit=crop');
+
+    background-size:cover;
+    background-position:center;
+
+    border-radius:35px;
+
+    text-align:center;
 }
 
 .hero h1 {
-    font-size: 72px;
-    font-weight: 300;
-    letter-spacing: 4px;
+    font-size:90px;
+    font-weight:200;
+    letter-spacing:6px;
 }
 
 .hero p {
-    font-size: 22px;
-    margin-top: 20px;
-    line-height: 1.8;
+    font-size:24px;
+    color:#dddddd;
+    line-height:1.8;
+}
+
+.button {
+    background:white;
+    color:black;
+    padding:18px 45px;
+    border-radius:50px;
+    margin-top:30px;
+    font-size:20px;
 }
 
 .section-title {
-    font-size: 52px;
-    font-weight: 300;
-    margin-bottom: 20px;
+    font-size:60px;
+    font-weight:200;
+}
+
+.section-text {
+    color:#cccccc;
+    font-size:20px;
+    line-height:1.9;
 }
 
 .card {
-    background: white;
-    padding: 20px;
-    border-radius: 25px;
-    box-shadow: 0px 10px 30px rgba(0,0,0,0.08);
+    background:#111111;
+    padding:30px;
+    border-radius:30px;
+    border:1px solid rgba(255,255,255,0.08);
 }
 
-.dark-section {
-    background: black;
-    color: white;
-    padding: 80px 40px;
-    border-radius: 30px;
+.card h2 {
+    font-size:30px;
+    font-weight:300;
+}
+
+.card p {
+    color:#cccccc;
+    line-height:1.8;
 }
 
 .footer {
-    background: black;
-    color: white;
-    padding: 50px;
-    border-radius: 30px;
-    text-align: center;
+    text-align:center;
+    padding:80px;
+    color:#999999;
 }
 
 </style>
@@ -81,16 +111,25 @@ html, body, [class*="css"] {
 # =========================================================
 
 st.markdown("""
+
 <div class="hero">
 
-<h1>GENBRIGHT<br>WORLD SCHOOL</h1>
+<h1>
+GENBRIGHT<br>
+WORLD SCHOOL
+</h1>
 
 <p>
 Admissions Open 2026–27<br>
-Premium Future Ready Learning Environment
+Premium Future Ready Global Education
 </p>
 
+<div class="button">
+Explore Campus
 </div>
+
+</div>
+
 """, unsafe_allow_html=True)
 
 st.write("")
@@ -100,143 +139,178 @@ st.write("")
 # ABOUT SECTION
 # =========================================================
 
-col1, col2 = st.columns([1,1])
+col1, col2 = st.columns(2)
 
 with col1:
 
     st.markdown(
-    '<div class="section-title">Learning Beyond The Classroom</div>',
+    '<div class="section-title">Future Ready Learning</div>',
     unsafe_allow_html=True
     )
 
-    st.write("""
-Genbright World School blends world-class academics,
-modern infrastructure, innovation, leadership,
-creativity, and experiential learning.
-""")
+    st.markdown(
+    '<div class="section-text">Genbright World School combines innovation, technology, creativity, leadership, and experiential learning to inspire future global citizens.</div>',
+    unsafe_allow_html=True
+    )
 
 with col2:
 
     st.image(
-    "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1400&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1600&auto=format&fit=crop",
     use_container_width=True
     )
-
-st.write("")
-st.write("")
 
 # =========================================================
 # CAMPUS SECTION
 # =========================================================
 
-st.markdown("""
-<div class="section-title">
-Modern Campus Experience
-</div>
-""", unsafe_allow_html=True)
+st.write("")
+st.write("")
+
+st.markdown(
+'<div class="section-title">3D Smart Campus Experience</div>',
+unsafe_allow_html=True
+)
+
+st.markdown(
+'<div class="section-text">Modern architecture, smart classrooms, innovation labs, and immersive learning spaces.</div>',
+unsafe_allow_html=True
+)
 
 st.image(
-"https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?q=80&w=1800&auto=format&fit=crop",
+"https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?q=80&w=2000&auto=format&fit=crop",
 use_container_width=True
 )
 
-st.write("")
-st.write("")
-
 # =========================================================
-# STUDENT LIFE
+# HITECH SECTION
 # =========================================================
-
-st.markdown("""
-<div class="dark-section">
-
-<h1 style="font-weight:300;">
-Student Life & Holistic Learning
-</h1>
-
-<p style="font-size:20px; color:#cccccc;">
-Technology, creativity, sports,
-leadership, and emotional intelligence.
-</p>
-
-</div>
-""", unsafe_allow_html=True)
 
 st.write("")
 st.write("")
 
-# =========================================================
-# FEATURES
-# =========================================================
-
-col1, col2, col3 = st.columns(3)
+col1, col2 = st.columns(2)
 
 with col1:
 
-    st.markdown("""
-    <div class="card">
-    <h2>Creative Learning</h2>
-    <p>
-    Interactive learning experiences
-    for imagination and innovation.
-    </p>
-    </div>
-    """, unsafe_allow_html=True)
+    st.image(
+    "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1800&auto=format&fit=crop",
+    use_container_width=True
+    )
 
 with col2:
 
+    st.markdown(
+    '<div class="section-title">Hi-Tech Smart Education</div>',
+    unsafe_allow_html=True
+    )
+
+    st.markdown(
+    '<div class="section-text">AI-powered learning, robotics labs, coding education, and modern digital classrooms.</div>',
+    unsafe_allow_html=True
+    )
+
+# =========================================================
+# FEATURE CARDS
+# =========================================================
+
+st.write("")
+st.write("")
+
+c1, c2, c3 = st.columns(3)
+
+with c1:
+
     st.markdown("""
+
     <div class="card">
-    <h2>Smart Education</h2>
+
+    <h2>Creative Innovation</h2>
+
     <p>
-    Technology-enabled classrooms
-    designed for future-ready growth.
+    Interactive learning experiences
+    for creativity and innovation.
     </p>
+
     </div>
+
     """, unsafe_allow_html=True)
 
-with col3:
+with c2:
 
     st.markdown("""
+
     <div class="card">
+
+    <h2>AI Smart Classrooms</h2>
+
+    <p>
+    Advanced teaching systems
+    and immersive learning methods.
+    </p>
+
+    </div>
+
+    """, unsafe_allow_html=True)
+
+with c3:
+
+    st.markdown("""
+
+    <div class="card">
+
     <h2>Holistic Growth</h2>
+
     <p>
-    Sports, leadership, arts,
-    and personality development.
+    Sports, leadership,
+    arts, and emotional intelligence.
     </p>
+
     </div>
+
     """, unsafe_allow_html=True)
 
-st.write("")
-st.write("")
-
 # =========================================================
-# ADMISSIONS
+# GALLERY
 # =========================================================
 
-st.markdown("""
-<div class="hero">
-
-<h1 style="font-size:60px;">
-Admissions Open
-</h1>
-
-<p>
-Join Genbright World School<br>
-for Academic Year 2026–27
-</p>
-
-</div>
-""", unsafe_allow_html=True)
-
 st.write("")
 st.write("")
+
+st.markdown(
+'<div class="section-title">Student Life & Innovation</div>',
+unsafe_allow_html=True
+)
+
+g1, g2, g3 = st.columns(3)
+
+with g1:
+
+    st.image(
+    "https://images.unsplash.com/photo-1513258496099-48168024aec0?q=80&w=1200&auto=format&fit=crop",
+    use_container_width=True
+    )
+
+with g2:
+
+    st.image(
+    "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1200&auto=format&fit=crop",
+    use_container_width=True
+    )
+
+with g3:
+
+    st.image(
+    "https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=1200&auto=format&fit=crop",
+    use_container_width=True
+    )
 
 # =========================================================
 # FOOTER
 # =========================================================
 
 st.markdown("""
+
 <div class="footer">
 
 <h2>GENBRIGHT WORLD SCHOOL</h2>
@@ -247,10 +321,10 @@ Mokila Campus<br>
 www.genbright.in
 </p>
 
-<p style="margin-top:20px; color:#bbbbbb;">
-Premium Interactive School Website Demo
+<p>
+Premium Cinematic School Website
 </p>
 
 </div>
-""", unsafe_allow_html=True)
 
+""", unsafe_allow_html=True)
